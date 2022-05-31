@@ -1,0 +1,80 @@
+geth --datadir "./data" account new
+
+//Node 1
+Public address of the key:   0xae757612316c2D98B19b1974E2bBCa4AA03CBEb6
+Path of the secret key file: data/keystore/UTC--2022-05-17T17-45-24.880633829Z--ae757612316c2d98b19b1974e2bbca4aa03cbeb6
+passcode: 123456789
+
+
+//Node 2
+Public address of the key:   0x9A4EE19AA5Ee2BFf4D89BDbBc119988cd6cee343
+Path of the secret key file: data/keystore/UTC--2022-05-17T17-46-11.024797847Z--9a4ee19aa5ee2bff4d89bdbbc119988cd6cee343
+passcode: 123456789
+
+
+geth --datadir "./data" init ../myblockchain.json 
+
+
+bootnode -genkey boot.key
+
+bootnode -nodekey boot.key
+
+
+enode://ba935336a4f51c30f7688f47fb1bcc3f91d6b828c93926d08a1af9e8f0d01bb1f77e2a792c2c5a467ab31461066f0b3e02cd54869e456f6c3b231d3de600ff2e@127.0.0.1:0?discport=30301
+
+
+enode://ba935336a4f51c30f7688f47fb1bcc3f91d6b828c93926d08a1af9e8f0d01bb1f77e2a792c2c5a467ab31461066f0b3e02cd54869e456f6c3b231d3de600ff2e@127.0.0.1:30301
+
+
+
+
+
+bootnode -nodekey "./boot.key" -verbosity 7 -addr "127.0.0.1:30301"
+
+
+
+geth --networkid 14333 --datadir "./data" --bootnodes enode://ba935336a4f51c30f7688f47fb1bcc3f91d6b828c93926d08a1af9e8f0d01bb1f77e2a792c2c5a467ab31461066f0b3e02cd54869e456f6c3b231d3de600ff2e@127.0.0.1:30301 --port 30303 --ipcdisable --syncmode full --http --allow-insecure-unlock --http.corsdomain "*" --http.port 8545 --http.api "db,eth,net,web3,personal,miner,admin"  --unlock 0xae757612316c2D98B19b1974E2bBCa4AA03CBEb6 --password password.txt --mine
+
+
+
+
+geth --networkid 14333 --datadir "./data" --bootnodes enode://ba935336a4f51c30f7688f47fb1bcc3f91d6b828c93926d08a1af9e8f0d01bb1f77e2a792c2c5a467ab31461066f0b3e02cd54869e456f6c3b231d3de600ff2e@127.0.0.1:30301 --port 30304 --ipcdisable --syncmode full --http --allow-insecure-unlock --http.corsdomain "*" --http.port 8546  --http.api "db,eth,net,web3,personal,miner,admin"  --unlock 0x9A4EE19AA5Ee2BFf4D89BDbBc119988cd6cee343 --password password.txt
+
+
+
+detail mix sound baby nation humble way senior duck aspect upgrade ship
+
+
+geth attach http://127.0.0.1:8545
+
+geth attach http://127.0.0.1:8546
+
+admin.nodeInfo
+
+
+node 1:
+enode://7e003965ee580b755be6a1a1bdea55f85b3599184758f043ea82b41c5b8d1f24095a952e033f8ab94306df92678525e46db44ce363b3e57a385ad124ba0f4295@169.254.22.217:30303
+
+
+node 2:
+enode://7e003965ee580b755be6a1a1bdea55f85b3599184758f043ea82b41c5b8d1f24095a952e033f8ab94306df92678525e46db44ce363b3e57a385ad124ba0f4295@169.254.22.217:30303
+
+
+
+admin.addPee
+
+r("enode://7e003965ee580b755be6a1a1bdea55f85b3599184758f043ea82b41c5b8d1f24095a952e033f8ab94306df92678525e46db44ce363b3e57a385ad124ba0f4295@169.254.22.217:30303")
+
+
+
+eth.sendTransaction({from: eth.accounts[0], to: "0x9A4EE19AA5Ee2BFf4D89BDbBc119988cd6cee343", value: 20})
+
+
+eth.getBalance("0x6dDb788029774B1CA86BFb66DdE4800B425976A3")
+
+
+
+0xAd4e5AfC88b24822A98172eBCBee27f2F1955c94
+
+
+export DATABASE_URL=postgresql://postgres:password@localhost:5432/blockscout

@@ -1,0 +1,36 @@
+{
+	"compiler": {
+		"version": "0.4.17+commit.bdeb9e52"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"methods": {},
+			"title": "SafeMath"
+		},
+		"userdoc": {
+			"methods": {}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/RealEstate.sol": "SafeMath"
+		},
+		"libraries": {},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/RealEstate.sol": {
+			"keccak256": "0x85b36859c6aa39d04996968ed363e750d52e7edb9babde31741b0ab703ae1c53",
+			"urls": [
+				"bzzr://9b2b58860b5b3c1b95a355af7cb02641d1aa60f5897ec8827ab185093849ae22"
+			]
+		}
+	},
+	"version": 1
+}
